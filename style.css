@@ -1,0 +1,162 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  direction: rtl;
+  background: #f0f8ff;
+  color: #222;
+}
+
+.logo {
+  color: #00aaff;
+  font-weight: bold;
+}
+
+header.main-header {
+  text-align: center;
+  background: #20264f;
+  color: #fff;
+  padding: 30px;
+}
+
+/* زرار التنقل */
+.nav-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* الصور المتحركة داخل مربع */
+.gallery-container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-slider {
+  display: flex;
+  gap: 20px;
+  animation: scrollSlider 20s linear infinite;
+}
+
+.gallery-slider img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+@keyframes scrollSlider {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.section-products, .section-designs, .section-about {
+  padding: 40px;
+  text-align: center;
+}
+
+.product-grid, .design-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-box, .design-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.design-box img {
+  width: 100%;
+  height: auto;
+}
+
+.design-box:hover {
+  transform: scale(1.08);
+}
+
+.qty {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.qty button {
+  padding: 5px 10px;
+  background: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.qty span {
+  font-weight: bold;
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+}
+
+.checkout {
+  margin-top: 30px;
+}
+
+.checkout input {
+  padding: 10px;
+  width: 200px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.checkout button {
+  padding: 10px 20px;
+  background: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #20264f;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* رموز التواصل */
+.icon-whatsapp::after {
+  content: " 💬";
+}
+.icon-telegram::after {
+  content: " 📩";
+}
+
+/* استجابة للشاشات المختلفة */
+@media screen and (max-width: 768px) {
+  .product-box, .design-box {
+    width: 90%;
+  }
+  .nav-buttons button,
+  .checkout button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .checkout input {
+    width: 100%;
+  }
+  .gallery-slider img {
+    width: 100px;
+  }
