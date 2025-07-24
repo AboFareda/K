@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>K-Print | مؤسسة كريم للدعاية والإعلان</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🏁 المقدمة -->
+  <header class="main-header">
+    <h1>مرحبًا بك في <span class="logo">K-Print</span></h1>
+    <nav class="nav-buttons">
+      <button onclick="scrollToSection('products')">🛍️ المنتجات</button>
+      <button onclick="scrollToSection('designs')">🎨 التصاميم</button>
+    </nav>
+    <div class="gallery-container">
+      <div class="gallery-slider">
+        <img src="gallery/01.jpg" alt="منتج 1">
+        <img src="gallery/02.jpg" alt="منتج 2">
+        <img src="gallery/03.jpg" alt="منتج 3">
+      </div>
+    </div>
+  </header>
+
+  <!-- 🛍️ المنتجات -->
+  <section id="products" class="section-products">
+    <h2>منتجاتنا</h2>
+    <div class="product-grid">
+      <div class="product-box">
+        <img src="gallery/item1.jpg" alt="منتج 1">
+        <p>منتج 1</p>
+        <div class="qty">
+          <button onclick="adjustQty('item1', -1)">➖</button>
+          <span id="qty-item1">0</span>
+          <button onclick="adjustQty('item1', 1)">➕</button>
+        </div>
+      </div>
+      <div class="product-box">
+        <img src="gallery/item2.jpg" alt="منتج 2">
+        <p>منتج 2</p>
+        <div class="qty">
+          <button onclick="adjustQty('item2', -1)">➖</button>
+          <span id="qty-item2">0</span>
+          <button onclick="adjustQty('item2', 1)">➕</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkout">
+      <input type="text" id="customerName" placeholder="ادخل اسمك هنا">
+      <button onclick="sendOrder()">إتمام عملية الشراء</button>
+    </div>
+  </section>
+
+  <!-- 🎨 التصاميم -->
+  <section id="designs" class="section-designs">
+    <h2>تصاميمنا السابقة</h2>
+    <div class="design-grid">
+      <div class="design-box">
+        <img src="gallery/design1.jpg" alt="تصميم 1">
+      </div>
+      <div class="design-box">
+        <img src="gallery/design2.jpg" alt="تصميم 2">
+      </div>
+      <div class="design-box">
+        <img src="gallery/design3.jpg" alt="تصميم 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧾 معلوماتنا -->
+  <section id="about" class="section-about">
+    <h3>About Us</h3>
+    <p>نحن مؤسسة كريم للإعلان، نقدم خدمات الدعايا والإعلان والمطبوعات بأنواعها والهدايا المطبوعة بأعلى جودة وأفضل خامة وسعر.</p>
+    <p>📍 العنوان: قرية قرنفيل - بجوار مدرسة قرنفيل الابتدائية المشتركة - القناطر الخيرية - القليوبية</p>
+    <p>📱 الطلبات: 01063181548 <span class="icon-whatsapp">واتساب</span></p>
+    <p>📞 التواصل: 01229253356 <span class="icon-whatsapp">واتساب</span> <span class="icon-telegram">تليجرام</span></p>
+  </section>
+
+  <!-- 🧯 الفوتر -->
+  <footer>
+    <p>2025 All Rights Reserved. Design by Eng.Karim Sayed</p>
+  </footer>
+
+  <!-- 🔧 السكريبت -->
+  <script>
+    const quantities = { item1: 0, item2: 0 };
+
+    function adjustQty(item, change) {
+      const newQty = Math.max(0, quantities[item] + change);
+      quantities[item] = newQty;
+      document.getElementById("qty-" + item).textContent = newQty;
+    }
+
+    function sendOrder() {
+      const name = document.getElementById("customerName").value.trim();
+      let message = `طلب جديد من ${name}:\n`;
+      for (let key in quantities) {
+        if (quantities[key] > 0) {
+          const productName = key === "item1" ? "منتج 1" : "منتج 2";
+          message += `${productName} × ${quantities[key]}\n`;
+        }
+      }
+      const encoded = encodeURIComponent(message.trim());
+      const waURL = `https://wa.me/201063181548?text=${encoded}`;
+      window.open(waURL, "_blank");
+    }
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
