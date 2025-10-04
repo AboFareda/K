@@ -507,18 +507,49 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					<header class="major">
 						<h2>Get in touch</h2>
 					</header>
-					<form method="post" action="#">
-						<div class="row gtr-uniform">
-							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-							<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-							<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-							<div class="col-12">
-								<ul class="actions special">
-									<li><input type="submit" value="Send Message" class="primary" /></li>
-								</ul>
-							</div>
-						</div>
-					</form>
+		<form id="contactForm">
+    <div class="row gtr-uniform">
+        <div class="col-6 col-12-xsmall">
+            <input type="text" name="name" id="name" placeholder="Name" required />
+        </div>
+        <div class="col-6 col-12-xsmall">
+            <input type="email" name="email" id="email" placeholder="Email" required />
+        </div>
+        <div class="col-12">
+            <textarea name="message" id="message" placeholder="Message" rows="4" required></textarea>
+        </div>
+        <div class="col-12">
+            <ul class="actions special">
+                <li><input type="button" value="Send Message" class="primary" onclick="sendToWhatsApp()" /></li>
+            </ul>
+        </div>
+    </div>
+</form>
+
+<script>
+    function sendToWhatsApp() {
+        // جمع البيانات من حقول النموذج
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // الرقم المطلوب (مع رمز البلد بدون أصفار بادئة)
+        const phoneNumber = '201229253356';
+
+        // تنسيق الرسالة لـ واتساب
+        // يتم استخدام ترميز URI (URI encoding) لضمان ظهور المسافات والرموز بشكل صحيح.
+        const whatsappMessage = `رسالة من الموقع:\n\nالاسم: ${name}\nالبريد الإلكتروني: ${email}\nالرسالة:\n${message}`;
+
+        // إنشاء رابط واتساب
+        const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+
+        // فتح الرابط في نافذة جديدة
+        window.open(whatsappURL, '_blank');
+        
+        // (اختياري) يمكنك إضافة سطر لمسح النموذج بعد الفتح
+        // document.getElementById('contactForm').reset();
+    }
+</script>
 				</div>
 				<footer>
 					<ul class="icons">
@@ -544,4 +575,5 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/main.js"></script>
 
 	</body>
+
 </html>
