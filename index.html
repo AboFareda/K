@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Link In Bio" />
+  <meta name="theme-color" content="#0d0d1a" />
+  <title>مبادرة دعمك النفسى أقرب مما تتوقع</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ░░ AMBIENT BACKGROUND ░░ -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="noise"></div>
+  </div>
+
+  <!-- ░░ MAIN WRAPPER ░░ -->
+  <main class="page-wrap">
+
+    <!-- ── HERO SECTION ── -->
+    <section class="hero" id="hero">
+      <div class="avatar-ring">
+        <div class="avatar-glow"></div>
+        <img
+          class="avatar-img"
+          src="IMG/profile.jpg"
+          onerror="this.src='https://ui-avatars.com/api/?name=My+Brand&size=200&background=9b59b6&color=fff&bold=true&rounded=true'"
+          alt="صورة البروفايل"
+          loading="eager"
+        />
+        <div class="online-dot"></div>
+      </div>
+
+      <h1 class="handle">مبادرة دعمك النفسي</h1>
+      <p class="tagline"> أقرب مما تتوقع
+</p>
+      <p class="bio">
+هذه المبادرة صُممت لتساعدك أثناء تواجدك في المستشفى لتمنحك شعور بالراحة و الأمان
+<br />
+        <span class="bio-en">This initiative is designed to help you while you are in the hospital, 
+          giving you a sense of comfort and security.</span>
+      </p>
+
+    </section>
+
+
+    <!-- ── REELS / VIDEO SECTION ── -->
+    <section class="section-block" id="reels">
+      
+      <img src="img/banner.jpg">
+      <h2 class="section-title"><span class="pill">▶</span> مقاطع تهمك </h2>
+      <div class="reels-grid" id="reelsGrid">
+        <!-- JS will inject video cards from IMG/ folder -->
+        <div class="reel-placeholder">
+
+          <div class="reel-card demo">
+            <div class="reel-thumb" style="background:linear-gradient(135deg,#9b59b6,#3498db)">
+              <div class="play-btn"><a target="_blank" style="text-decoration: none; color: white;" href="img/1.mp4">▶</a></div>
+           
+              <video controls width="100%">
+              <source src="img/1.mp4" type="video/mp4">
+            </video>
+          
+            </div>
+            <p class="reel-cap">آيات السكينة والطمأنينة</p>
+          </div>
+
+
+
+          <div class="reel-card demo">
+            <div class="reel-thumb" style="background:linear-gradient(135deg,#ff0342,#ddcf06)">
+              <div class="play-btn"><a target="_blank" style="text-decoration: none; color: white;" href="img/2.mp4">▶</a></div>
+           
+              <video controls width="100%">
+              <source src="img/2.mp4" type="video/mp4">
+            </video>
+          
+            </div>
+            <p class="reel-cap"><span style="color: #ddcf06;">رسالة لك من الدكتورة ندى العيسى</span> <br>رئيسة وحدة العلاج النفسى بالمستشفى العام</p>
+          </div>
+
+
+
+          <div class="reel-card demo">
+            <div class="reel-thumb" style="background:linear-gradient(135deg,#1abc9c,#2980b9)">
+          <div class="play-btn"><a target="_blank" style="text-decoration: none; color: white;" href="img/3.mp4">▶</a></div>
+                            <video controls width="100%">
+              <source src="img/3.mp4" type="video/mp4">
+            </video>
+
+          </div>
+            <p class="reel-cap">خطوات تمرين الاسترخاء العضلي</p>
+          </div>
+
+                    <div class="reel-card demo">
+            <div class="reel-thumb" style="background:linear-gradient(135deg,#1abc9c,#2980b9)">
+          <div class="play-btn"><a target="_blank" style="text-decoration: none; color: white;" href="img/4.mp4">▶</a></div>
+                            <video controls width="100%">
+              <source src="img/4.mp4" type="video/mp4">
+            </video>
+
+          </div>
+            <p class="reel-cap">هل أحتاج أخصائى نفسى فعلا؟</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+        <!-- ── SOCIAL LINKS ── -->
+    <section class="social-links" id="socials">
+      <a target="_blank" href="https://www.instagram.com/" class="social-btn" data-platform="instagram" aria-label="Instagram">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <span class="social-label">Instagram</span>
+        <span class="social-arrow">→</span>
+      </a>
+
+      <a href="https://www.youtube.com/" class="social-btn" data-platform="youtube" aria-label="YouTube">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.6 5 12 5 12 5s-4.6 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.6 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9.5l5.4 2.5-5.4 2.5z"/></svg>
+        </span>
+        <span class="social-label">YouTube</span>
+        <span class="social-arrow">→</span>
+      </a>
+
+      <a href="https://www.tiktok.com/en/" class="social-btn" data-platform="tiktok" aria-label="TikTok">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 3h-3v11.4a2.6 2.6 0 1 1-2.6-2.6c.2 0 .5 0 .7.1V8.8a6 6 0 1 0 5 5.9V8.3a8.6 8.6 0 0 0 5 1.6V6.4A5.6 5.6 0 0 1 19.6 3z"/></svg>
+        </span>
+        <span class="social-label">TikTok</span>
+        <span class="social-arrow">→</span>
+      </a>
+
+      <a href="https://x.com/" class="social-btn" data-platform="twitter" aria-label="X / Twitter">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.1l-6.8 7.8L22.5 22h-6.2l-4.9-6.4L5.5 22H2.4l7.3-8.3L2 2h6.4l4.5 5.8L18.2 2zm-1.1 18h1.7L7 3.8H5.2L17.1 20z"/></svg>
+        </span>
+        <span class="social-label">X / Twitter</span>
+        <span class="social-arrow">→</span>
+      </a>
+
+      <a href="https://www.linkedin.com/" class="social-btn" data-platform="linkedin" aria-label="LinkedIn">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </span>
+        <span class="social-label">LinkedIn</span>
+        <span class="social-arrow">→</span>
+      </a>
+
+      <a href="https://www.snapchat.com/" class="social-btn" data-platform="snapchat" aria-label="Snapchat">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 6 4.8 6 8v.9c-.4.1-.8.2-1 .5-.2.3-.2.7.1 1.1.4.6 1.1.9 1.8 1-1 2-2.3 2.7-3 3a.5.5 0 0 0 .1.9c.5.1 1 .1 1.5.3.1.4-.1.9-.3 1.3l.1.1c.4 0 .7-.1 1.2-.4.7-.4 1.6-.6 2.5-.6s1.8.2 2.5.6c.5.3.8.4 1.2.4l.1-.1c-.2-.4-.4-.9-.3-1.3.5-.2 1-.2 1.5-.3a.5.5 0 0 0 .1-.9c-.7-.3-2-1-3-3 .7-.1 1.4-.4 1.8-1 .3-.4.3-.8.1-1.1-.2-.3-.6-.4-1-.5V8C18 4.8 15.9 2 12 2z"/></svg>
+        </span>
+        <span class="social-label">Snapchat</span>
+        <span class="social-arrow">→</span>
+      </a>
+    </section>
+
+
+    <a class="banner-link" target="_blank" href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=-tEbsChekUmt4jy0UVgeosyojhA-kw5JgFIYJxfrmQlURU1HM0FYWUdFUFlEREIwWktZWVNPUVJHUy4u&origin=QRCode&qrcodeorigin=presentation&route=shorturl
+    "><img src="img/8.png" alt=""></a>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      <p class="footer-copy"><span style="color: #ffffff;">وجودك هنا خطوة نحو التعافي وكل يوم يمر يقربك أكثر للشفاء بإذن الله</span></p>
+      <p class="footer-sub"><span style="color: #ebe6e6;">مع  تحيات قسم الصحة النفسية</span> </p>
+      <p class="footer-sub"><span style="color: #d4d3d3;">مدينة الملك سعود الطبية</span></p>
+
+    </footer>
+
+
+  </main>
+  <br/>
+
+  <!-- ░░ FLOATING WHATSAPP ░░ -->
+  <a href="https://wa.me/201234567890" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.4.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6 0 1.6 1.1 3.1 1.3 3.3.2.2 2.2 3.3 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.6.2-1.2.1-1.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5C8.3 21.5 10.1 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.4 1.1 1-3.3-.2-.3C3.4 14.8 3 13.4 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9z"/>
+    </svg>
+    <span class="fab-label">تواصل معي</span>
+  </a>
+
+  <!-- ░░ LIGHTBOX OVERLAY ░░ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+    <button class="lb-close" id="lbClose" aria-label="إغلاق">✕</button>
+    <img class="lb-img" id="lbImg" src="" alt="صورة مكبرة" />
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
